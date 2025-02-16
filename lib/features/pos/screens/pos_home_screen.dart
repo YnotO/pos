@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pos_mgt/features/inventory/screens/inventory_screen.dart';
 import 'package:pos_mgt/features/pos/widgets/cart_item_tile.dart';
 import 'package:pos_mgt/features/pos/widgets/product_card.dart';
 
@@ -21,48 +22,62 @@ class POSHomeScreen extends StatelessWidget {
       ),
 
       // Adding the Sidebar Menu
-      drawer: Drawer(
-        child: Column(
-          children: [
-            UserAccountsDrawerHeader(
-              accountName:
-                  Text("Tony"), // You can replace this with a dynamic username
-              accountEmail: Text("tony@example.com"),
-              currentAccountPicture: CircleAvatar(
-                backgroundColor: Colors.white,
-                child: Icon(Icons.person, size: 40, color: Colors.blue),
+      drawer: SizedBox(
+        width: MediaQuery.of(context).size.width * 0.50, // width of the drawer
+        child: Drawer(
+          child: Column(
+            children: [
+              UserAccountsDrawerHeader(
+                accountName: Text(
+                    "Tony"), // You can replace this with a dynamic username
+                accountEmail: Text("tony@example.com"),
+                currentAccountPicture: CircleAvatar(
+                  backgroundColor: Colors.white,
+                  child: Icon(Icons.person, size: 40, color: Colors.blue),
+                ),
               ),
-            ),
-            ListTile(
-              leading: Icon(Icons.dashboard),
-              title: Text('Home'),
-              onTap: () {
-                Navigator.pop(context); // Close the drawer
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.history),
-              title: Text('Sales History'),
-              onTap: () {
-                // Navigate to Sales History Screen
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.settings),
-              title: Text('Settings'),
-              onTap: () {
-                // Navigate to Settings Screen
-              },
-            ),
-            Divider(),
-            ListTile(
-              leading: Icon(Icons.exit_to_app),
-              title: Text('Logout'),
-              onTap: () {
-                // Handle Logout
-              },
-            ),
-          ],
+              ListTile(
+                leading: Icon(Icons.dashboard),
+                title: Text('Home'),
+                onTap: () {
+                  Navigator.pop(context); // Close the drawer
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.inventory),
+                title: Text('Products'),
+                onTap: () {
+                  // Navigate to Settings Screen
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => InventoryScreen()));
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.history),
+                title: Text('Sales History'),
+                onTap: () {
+                  // Navigate to Sales History Screen
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.settings),
+                title: Text('Settings'),
+                onTap: () {
+                  // Navigate to Sales History Screen
+                },
+              ),
+              Divider(),
+              ListTile(
+                leading: Icon(Icons.exit_to_app),
+                title: Text('Logout'),
+                onTap: () {
+                  // Handle Logout
+                },
+              ),
+            ],
+          ),
         ),
       ),
 

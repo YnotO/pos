@@ -9,7 +9,7 @@ class CartItemTile extends StatelessWidget {
       title: Text('SoftCare Pampus'),
       subtitle: Text('Qty: 1'),
       trailing:
-          Text('\ksh 670.00', style: TextStyle(fontWeight: FontWeight.bold)),
+          Text('ksh 670.00', style: TextStyle(fontWeight: FontWeight.bold)),
     );
   }
 }
