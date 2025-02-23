@@ -105,12 +105,12 @@ class POSHomeScreen extends StatelessWidget {
                 Expanded(
                   flex: 2,
                   child: GridView.builder(
-                    padding: EdgeInsets.all(8),
+                    padding: EdgeInsets.all(6),
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
+                      crossAxisCount: 3,
                       childAspectRatio: 0.8,
-                      crossAxisSpacing: 8,
-                      mainAxisSpacing: 8,
+                      crossAxisSpacing: 6,
+                      mainAxisSpacing: 6,
                     ),
                     itemCount: 8, // Example product count
                     itemBuilder: (context, index) {

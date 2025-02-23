@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pos_mgt/features/inventory/screens/add_product_screen.dart';
 
 class InventoryScreen extends StatelessWidget {
   const InventoryScreen({super.key});
@@ -12,7 +13,11 @@ class InventoryScreen extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.add),
             onPressed: () {
-              // Navigate to add product screen
+              print('Button Pressed!'); // Debugging check
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => AddProductScreen()),
+              );
             },
           ),
         ],
